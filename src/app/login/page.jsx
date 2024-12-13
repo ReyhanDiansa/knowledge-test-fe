@@ -1,8 +1,23 @@
-"use client";
-
 import React from "react";
 import LoginComponent from "../../components/pages/login";
-import { withAuth } from "../../utils/authenticationMiddleware";
+
+export const metadata = {
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}login`),
+  title: "Login",
+  description:
+    "Login to KelolaProduk to access your account and manage products and categories with ease.",
+  openGraph: {
+    title: "Login | KelolaProduk",
+    description:
+      "Login to KelolaProduk to access your account and manage products and categories with ease",
+    type: "website",
+    url: process.env.NEXT_PUBLIC_BASE_URL + "login",
+    siteName: "KelolaProduk",
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL + "login",
+  },
+};
 
 const Login = () => {
   return (
@@ -14,4 +29,4 @@ const Login = () => {
   );
 };
 
-export default withAuth(Login);
+export default Login;

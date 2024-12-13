@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteCookie } from "../../../utils/cookie";
 import { CiLogout } from "react-icons/ci";
+import Link from "next/link";
 
 
 const Header = ({ toggleSidebar, userData }) => {
@@ -26,9 +27,9 @@ const Header = ({ toggleSidebar, userData }) => {
         <button onClick={toggleSidebar} className="text-2xl text-primary">
           ☰
         </button>
-        <p className="text-md md:text-xl font-semibold text-primary">
+        <Link href={"/"} className="text-md md:text-xl font-semibold text-primary">
           KelolaProduk
-        </p>
+        </Link>
       </div>
       <div className="text-md md:text-xl font-semibold text-primary">
         <section className="relative">

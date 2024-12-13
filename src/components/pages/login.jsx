@@ -14,6 +14,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PasswordInput from "../elements/Form/passwordInput";
 import showToast from "../../utils/toast";
+import { withAuth } from "../../utils/authenticationMiddleware";
+
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -118,4 +120,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withAuth(Login);

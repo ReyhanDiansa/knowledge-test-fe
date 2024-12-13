@@ -1,8 +1,23 @@
-"use client";
-
 import React from "react";
 import RegisterComponent from "../../components/pages/register";
-import { withAuth } from "../../utils/authenticationMiddleware";
+
+export const metadata = {
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}login`),
+  title: "Register",
+  description:
+    "Create a new account on KelolaProduk to start managing your products and categories effortlessly.",
+  openGraph: {
+    title: "Register | KelolaProduk",
+    description:
+      "Create a new account on KelolaProduk to start managing your products and categories effortlessly.",
+    type: "website",
+    url: process.env.NEXT_PUBLIC_BASE_URL + "register",
+    siteName: "KelolaProduk",
+  },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL + "register",
+  },
+};
 
 const Register = () => {
   return (
@@ -14,4 +29,4 @@ const Register = () => {
   );
 };
 
-export default withAuth(Register);
+export default Register;

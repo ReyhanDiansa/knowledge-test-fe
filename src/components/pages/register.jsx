@@ -25,6 +25,7 @@ import { TbLockCheck } from "react-icons/tb";
 import showToast from "../../utils/toast";
 import Select from "../elements/Form/select";
 import "react-toastify/dist/ReactToastify.css";
+import { withAuth } from "../../utils/authenticationMiddleware";
 
 
 const Register = () => {
@@ -280,4 +281,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default withAuth(Register);

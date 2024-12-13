@@ -327,7 +327,7 @@ const Profile = () => {
         </div>
       </div>
       <button
-        className={`mt-5 block md:hidden gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
+        className={`mt-5 md:hidden gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 w-fit flex ${
           isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
         }`}
         onClick={handleUpdate}

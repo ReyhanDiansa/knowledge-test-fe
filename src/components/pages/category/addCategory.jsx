@@ -60,7 +60,7 @@ const addCategory = () => {
     <div>
       <ToastContainer />
       <div>
-        <Link href={"/category"} className="flex gap-1 items-center my-1 hover:text-blue-500">
+        <Link href={"/category"} className="flex gap-1 items-center my-1 hover:text-blue-500 w-fit">
           <FaArrowLeft />
           <p className="underline">Back To List</p>
         </Link>
