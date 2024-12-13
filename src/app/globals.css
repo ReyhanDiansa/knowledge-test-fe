@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: black;
+}
+
+/* Apply to all scrollbars */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-track {
+  background: #fff7c7; /* Background of the scrollbar track */
+  /* border-radius: 2px; Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E43D12; /* Color of the scrollbar thumb */
+  border-radius: 3px;
+  border: 3px solid #fef9de; /* Padding around the thumb (to give a gap effect) */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #E43D12; /* Darker color on hover for the scrollbar thumb */
+}
+/* 
+.pitch {
+  background-size: 1200px 600px !important;
+} */
+
