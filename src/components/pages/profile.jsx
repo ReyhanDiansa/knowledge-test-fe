@@ -22,6 +22,7 @@ import {
   validatePassword,
 } from "../../utils/validate";
 import SpinnerLoading from "../elements/Loading/spinnerLoading";
+import ProfileLoading from "../elements/Loading/profileLoading";
 
 const Profile = () => {
   const [userId, setUserId] = useState("");
@@ -30,8 +31,7 @@ const Profile = () => {
   const [password, setPassword] = useState("");
   const [selectedGender, setSelectedGender] = useState(null);
   const [token, setToken] = useState("");
-  const [getLoading, setGetLoading] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [getLoading, setGetLoading] = useState(true);
   const [numberRule, setNumber] = useState(false);
   const [lengthRule, setLength] = useState(false);
   const [capitalRule, setCapital] = useState(false);
@@ -188,71 +188,78 @@ const Profile = () => {
       <div className="mb-5">
         <h1 className="text-2xl font-semibold text-primary">Profile</h1>{" "}
       </div>
-      <div className="flex flex-col md:flex-row md:gap-7 md:items-center gap-2">
-        <div>
-          <Image
-            src={"/asset/images/dummy-profile.jpg"}
-            width={200}
-            height={200}
-            alt={"user-dummy-foto"}
-            className="rounded-md"
-          />
-        </div>
-        <div className="flex flex-wrap flex-col md:flex-row gap-3 ">
-          <div className="md:w-5/12">
-            <Input
-              label="Name"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              withIcon={false}
-              width={"full"}
-            />
-          </div>
-          <div className="md:w-5/12">
-            <Input
-              label="Email"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              withIcon={false}
-              width={"full"}
-            />
-          </div>
-          <div className="md:w-5/12">
-            <div>
-              <div className="mb-2">
-                <p className="text-sm font-medium text-gray-900">Gender</p>
-              </div>
-              <Select
-                className="basic-single"
-                classNamePrefix="select"
-                styles={customStyles}
-                isSearchable={true}
-                name="category"
-                options={genderSelectOption}
-                onChange={handleChangeGender}
-                value={selectedGender}
+      <div className="flex flex-col md:flex-row md:gap-7 md:items-center gap-2 md:justify-between">
+        {getLoading ? (
+          <ProfileLoading />
+        ) : (
+          <>
+            <div className="md:w-fit">
+              <Image
+                src={"/asset/images/dummy-profile.jpg"}
+                width={200}
+                height={200}
+                alt={"user-dummy-foto"}
+                className="rounded-md"
               />
             </div>
-            <button
-              className={`mt-5 hidden md:flex gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
-                isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
-              }`}
-              onClick={handleUpdate}
-              disabled={isDisable}
-            >
-              {isLoading && <SpinnerLoading withText={false} />} Update
-            </button>
-          </div>
-        </div>
-        <div className="shadow-md px-3 flex items-center h-60 rounded-md border-1 border-primary">
+            <div className="flex flex-wrap md:w-7/12 flex-col md:flex-row gap-3 ">
+              <div className="md:w-5/12">
+                <Input
+                  label="Name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  withIcon={false}
+                  width={"full"}
+                />
+              </div>
+              <div className="md:w-5/12">
+                <Input
+                  label="Email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  withIcon={false}
+                  width={"full"}
+                />
+              </div>
+              <div className="md:w-6/12">
+                <div className="">
+                  <div className="mb-2">
+                    <p className="text-sm font-medium text-gray-900">Gender</p>
+                  </div>
+                  <Select
+                    className="basic-single"
+                    classNamePrefix="select"
+                    styles={customStyles}
+                    isSearchable={true}
+                    name="category"
+                    options={genderSelectOption}
+                    onChange={handleChangeGender}
+                    value={selectedGender}
+                  />
+                </div>
+                <button
+                  className={`mt-5 hidden md:flex gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
+                    isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
+                  }`}
+                  onClick={handleUpdate}
+                  disabled={isDisable}
+                >
+                  {isLoading && <SpinnerLoading withText={false} />} Update
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+
+        <div className="shadow-md px-3 flex items-center h-60 rounded-md border-1 border-primary md:w-fit">
           <div className="my-auto">
             <p className="text-xs text-gray-500">
               Fill in only if you want to update your password

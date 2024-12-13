@@ -49,7 +49,7 @@ const productModal = ({ isOpen, closeModal, id }) => {
           <ProductInfoLoading />
         ) : (
           <div>
-            <div className="flex gap-3">
+            <div className="flex md:flex-row flex-col gap-3">
               <div>
                 <Image
                   src={productImage || "/asset/images/image-not-found.png"}

@@ -4,7 +4,7 @@ import SkeletonInput from "./inputSkeleton";
 const productInfoLoading = () => {
   return (
     <div className="">
-      <div className="flex gap-3">
+      <div className="flex md:flex-row flex-col gap-3">
         <div className="space-y-4 w-4/12 mb-1">
           <SkeletonInput width="full" height="full" />
         </div>

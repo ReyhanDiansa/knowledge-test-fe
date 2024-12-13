@@ -12,6 +12,7 @@ const PasswordInput = ({
   withBottommargin = true,
   withIcon = true,
   withLabel = true,
+  widthResponsive="64"
 }) => {
   // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +42,7 @@ const PasswordInput = ({
           type={showPassword ? "text" : "password"}
           id={id}
           name={name}
-          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 md:w-80 ${
+          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-${widthResponsive} md:w-80 ${
             withIcon && "px-10"
           } p-2.5`}
           placeholder={placeholder}

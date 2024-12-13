@@ -18,7 +18,7 @@ const textArea = ({
       >
         {label}
       </label>
-      <div className="relative mb-6">
+      <div className="relative ">
         {withIcon && (
           <div className="absolute inset-y-0 start-0 flex items-start pt-4 ps-3.5 pointer-events-none">
             {icon}

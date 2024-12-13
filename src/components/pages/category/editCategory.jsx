@@ -141,7 +141,7 @@ const editCategory = () => {
         </div>
 
         <button
-          className={`flex gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
+          className={`flex gap-2 mt-2 md:mt-0 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
             isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
           }`}
           onClick={handleEdit}

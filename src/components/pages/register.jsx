@@ -198,6 +198,7 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   icon={<RiLockFill />}
                   withBottommargin={false}
+                  widthResponsive="80"
                 />
                 {password && (
                   <div className="mt-1">
@@ -242,6 +243,7 @@ const Register = () => {
                   onChange={(e) => setPasswordConfirmation(e.target.value)}
                   icon={<TbLockCheck className="text-lg" />}
                   withBottommargin={false}
+                  widthResponsive="80"
                 />
               </div>
               <button

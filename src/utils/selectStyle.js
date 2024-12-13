@@ -6,7 +6,7 @@ export const customStyles = {
     borderColor: state.isFocused ? "#111827" : "#ccc",
     borderRadius: "8px",
     boxShadow: state.isFocused ? "#E43D12" : "none",
-    width: window.innerWidth <= 768 ? "100%" : "475px", // Responsive width
+    width: "100%",
     "&:hover": {
       borderColor: "#111827",
     },

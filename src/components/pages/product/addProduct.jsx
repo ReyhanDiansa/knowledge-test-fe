@@ -116,8 +116,8 @@ const addProduct = () => {
           <h1 className="text-2xl font-semibold text-primary">Add Product</h1>
         </div>
 
-        <div className="flex flex-wrap gap-3 my-5">
-          <div className="w-4/12">
+        <div className="flex md:flex-row flex-col md:flex-wrap gap-3 my-5">
+          <div className="md:w-4/12">
             <Input
               label="Name"
               type="text"
@@ -130,7 +130,7 @@ const addProduct = () => {
               width={"full"}
             />
           </div>
-          <div className="w-4/12">
+          <div className="md:w-4/12">
             <TextArea
               withIcon={false}
               label="Description"
@@ -141,7 +141,7 @@ const addProduct = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <div className="w-4/12">
+          <div className="md:w-4/12">
             <Input
               label="Price"
               type="number"
@@ -154,7 +154,7 @@ const addProduct = () => {
               width={"full"}
             />
           </div>
-          <div className="w-4/12">
+          <div className="md:w-4/12">
             <Input
               label="Stock"
               type="number"
@@ -167,7 +167,7 @@ const addProduct = () => {
               width={"full"}
             />
           </div>
-          <div className="w-4/12">
+          <div className="md:w-4/12">
             <Input
               label="Image"
               type="file"

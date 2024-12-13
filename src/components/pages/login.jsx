@@ -84,6 +84,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   icon={<RiLockFill />}
+                  widthResponsive="80"
                 />
               </div>
               <button

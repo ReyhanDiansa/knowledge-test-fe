@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../layout/sidebar/sidebar";
 import Header from "../layout/header/header";
 import { getCookie } from "../../utils/cookie";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
+import { withAuth } from "../../utils/authenticationMiddleware";
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
     <>
       <div className="bg-white">
         <div className="sticky top-0 z-20 w-full flex center h-[5rem]">
-          <Header toggleSidebar={toggleSidebar} userData={userData}/>
+          <Header toggleSidebar={toggleSidebar} userData={userData} />
         </div>
         <div className="flex min-h-screen ">
           <div
@@ -52,4 +53,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default withAuth(Layout);

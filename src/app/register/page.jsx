@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import RegisterComponent from "../../components/pages/register";
+import { withAuth } from "../../utils/authenticationMiddleware";
 
 const Register = () => {
   return (
@@ -11,4 +14,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default withAuth(Register);

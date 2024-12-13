@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import LoginComponent from "../../components/pages/login";
+import { withAuth } from "../../utils/authenticationMiddleware";
 
 const Login = () => {
   return (
@@ -11,4 +14,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withAuth(Login);

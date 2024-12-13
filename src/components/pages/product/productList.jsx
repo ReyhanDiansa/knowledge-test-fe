@@ -98,11 +98,11 @@ const productList = () => {
       <div>
         <ToastContainer />
         <div>
-          <div className="flex justify-between">
+          <div className="flex flex-col md:flex-row  justify-between">
             <h1 className="text-2xl font-semibold text-primary">
               Product List
             </h1>
-            <div className="flex gap-2">
+            <div className="flex md:mt-0 mt-3 flex-col-reverse md:flex-row gap-2">
               <Input
                 withLabel={false}
                 type="text"
@@ -125,7 +125,7 @@ const productList = () => {
 
           <div className="my-5">
             <div className="relative overflow-x-auto shadow-md rounded-md">
-              <table className="w-full text-sm text-left rtl:text-right text-gray-800">
+              <table className="w-full text-sm text-left rtl:text-right text-gray-800 overflow-auto">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b-2">
                   <tr>
                     <th scope="col" className="px-6 py-3 w-2/12">
