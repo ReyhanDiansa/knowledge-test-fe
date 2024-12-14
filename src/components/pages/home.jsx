@@ -47,14 +47,24 @@ const Home = () => {
       <div className="mx-auto">
         <div className="flex justify-center items-center gap-3">
           <p className="text-center text-2xl flex md:flex-row flex-col gap-2 justify-center items-center">
-            Welcome{" "}
-            <span className="flex text-3xl text-primary font-semibold underline">
+            <span className="flex items-center">
+              Welcome
+              <Image
+                src="/asset/gif/Hi.gif"
+                width={35}
+                height={30}
+                alt="halo-gif"
+                className="block md:hidden"
+              />
+            </span>
+            <span className="text-3xl text-primary font-semibold underline flex">
               {userData.name}
               <Image
                 src="/asset/gif/Hi.gif"
                 width={35}
                 height={30}
                 alt="halo-gif"
+                className="hidden md:block"
               />
             </span>
           </p>
