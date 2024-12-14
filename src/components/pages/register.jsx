@@ -157,7 +157,7 @@ const Register = () => {
               </p>
             </div>
             <div className="mx-auto flex flex-col items-center">
-              <div className="mt-3 w-11/12 md:w-8/12">
+              <div className="mt-3 w-80 md:w-8/12">
                 <Input
                   label="Name"
                   type="name"
@@ -171,7 +171,7 @@ const Register = () => {
                   width="full"
                 />
               </div>
-              <div className="mt-1 w-11/12 md:w-8/12">
+              <div className="mt-1 w-80 md:w-8/12">
                 <Input
                   label="Email"
                   type="email"
@@ -185,7 +185,7 @@ const Register = () => {
                   width="full"
                 />
               </div>
-              <div className="w-11/12 md:w-8/12 mt-1">
+              <div className="w-80 md:w-8/12 mt-1">
                 <div className="mb-2">
                   <p className="text-sm font-medium text-gray-900">
                     Gender <span className="text-red-600">*</span>

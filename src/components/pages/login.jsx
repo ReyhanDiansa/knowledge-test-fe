@@ -65,7 +65,7 @@ const Login = () => {
               </p>
             </div>
             <div className="mx-auto mt-6 flex flex-col items-center">
-              <div className="w-10/12 md:w-9/12">
+              <div className="w-80 md:w-9/12">
               <Input
                 label="Email"
                 type="email"
