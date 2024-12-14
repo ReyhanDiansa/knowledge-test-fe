@@ -2,7 +2,7 @@ import React from "react";
 import RegisterComponent from "../../components/pages/register";
 
 export const metadata = {
-  metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}login`),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}register`),
   title: "Register",
   description:
     "Create a new account on KelolaProduk to start managing your products and categories effortlessly.",

@@ -14,6 +14,7 @@ import Input from "../../elements/Form/input";
 import { debounce } from "lodash";
 import Modal from "../../elements/Modal/modal";
 import ProductModal from "../../elements/Modal/productModal";
+import { formatRupiah } from "../../../utils/formatter";
 
 const productList = () => {
   const [products, setProducts] = useState([]);
@@ -168,7 +169,7 @@ const productList = () => {
                       >
                         <td className="px-6 py-4">{item?.name}</td>
                         <td className="px-6 py-4">{item?.description}</td>
-                        <td className="px-6 py-4">{item?.price}</td>
+                        <td className="px-6 py-4">{formatRupiah(item?.price)}</td>
                         <td className="px-6 py-4">{item?.stock}</td>
                         <td className="px-6 py-4">{item?.category_id?.name}</td>
                         <td className="px-6 py-4 flex gap-2">

@@ -28,10 +28,10 @@ const Header = ({ toggleSidebar, userData }) => {
         </button>
         <Link
           href={"/"}
-          className="text-md md:text-xl font-semibold text-primary flex items-center gap-1"
+          className="text-md md:text-xl font-semibold text-primary flex items-center"
         >
-          <Image src="/asset/logo/icon.svg" width={50} height={40} alt="logo" />
-          KelolaProduk
+          <Image src="/asset/logo/logo.svg" width={120} height={40} alt="logo" />
+          {/* KelolaProduk */}
         </Link>
       </div>
       <div className="text-md md:text-xl font-semibold text-primary">

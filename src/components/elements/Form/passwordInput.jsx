@@ -15,10 +15,8 @@ const PasswordInput = ({
   widthResponsive = "64",
   required = true,
 }) => {
-  // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
 
-  // Toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };

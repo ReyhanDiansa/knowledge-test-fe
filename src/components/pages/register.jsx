@@ -145,17 +145,6 @@ const Register = () => {
     }
   };
 
-  const handleSelectChange = (event) => {
-    console.log(event.target.value);
-    setSelectedGender(event.target.value);
-  };
-
-  const genderOptions = [
-    { value: "", label: "Pilih Jenis Kelamin" },
-    { value: "laki-laki", label: "Laki-laki" },
-    { value: "perempuan", label: "Perempuan" },
-  ];
-
   return (
     <>
       <ToastContainer />
