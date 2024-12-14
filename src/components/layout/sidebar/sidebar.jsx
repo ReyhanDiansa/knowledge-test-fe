@@ -21,7 +21,7 @@ const Sidebar = ({ isOpen }) => {
     <>
       <ToastContainer />
       <aside
-        className={`bg-gray-50 mt-16 border-r-2 z-30 h-full w-64 fixed top-0 overflow-auto pb-20 left-0 transition-transform duration-300 ease-in-out transform ${
+        className={`bg-white mt-16 border-r-2 z-30 h-full w-64 fixed top-0 overflow-auto pb-20 left-0 transition-transform duration-300 ease-in-out transform ${
           isOpen ? "translate-x-0" : "-translate-x-64"
         }`}
       >

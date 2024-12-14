@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="bg-white">
+      <div className="bg-gray-50">
         <div className="sticky top-0 z-20 w-full flex center h-[5rem]">
           <Header toggleSidebar={toggleSidebar} userData={userData} />
         </div>

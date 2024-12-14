@@ -16,7 +16,6 @@ import PasswordInput from "../elements/Form/passwordInput";
 import showToast from "../../utils/toast";
 import { withAuth } from "../../utils/authenticationMiddleware";
 
-
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -65,7 +64,8 @@ const Login = () => {
                 Access your account and explore personalized features
               </p>
             </div>
-            <div className="mx-auto mt-6 flex flex-col items-center  w-full">
+            <div className="mx-auto mt-6 flex flex-col items-center">
+              <div className="w-10/12 md:w-9/12">
               <Input
                 label="Email"
                 type="email"
@@ -75,7 +75,9 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 icon={<MdEmail />}
+                width={"full"}
               />
+              </div>
               <div className="mt-3">
                 <PasswordInput
                   label="Password"

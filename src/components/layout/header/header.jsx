@@ -21,7 +21,7 @@ const Header = ({ toggleSidebar, userData }) => {
   };
 
   return (
-    <header className="bg-gray-50 border-b-2 p-4 py-2 flex justify-between gap-16 text-center md:gap-0 items-center fixed z-20 w-full">
+    <header className="bg-white border-b-2 p-4 py-2 flex justify-between gap-16 text-center md:gap-0 items-center fixed z-20 w-full">
       <div className="flex gap-5 items-center">
         <button onClick={toggleSidebar} className="text-2xl text-primary">
           ☰
