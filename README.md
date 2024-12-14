@@ -1,7 +1,7 @@
 <p align="center">
     <picture>
-      <source media="(prefers-color-scheme: white)" srcset="https://github.com/ReyhanDiansa/knowledge-test-fe/blob/main/public/asset/logo/logo.svg">
-      <img src="https://github.com/ReyhanDiansa/knowledge-test-fe/blob/main/public/asset/logo/logo.svg" height="128">
+      <source media="(prefers-color-scheme: white)" srcset="https://github.com/ReyhanDiansa/knowledge-test-fe/blob/main/public/asset/logo/logo.png">
+      <img src="https://github.com/ReyhanDiansa/knowledge-test-fe/blob/main/public/asset/logo/logo.png" width="300">
     </picture>
 </p>
 
