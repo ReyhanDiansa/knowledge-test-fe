@@ -23,6 +23,7 @@ import {
 } from "../../utils/validate";
 import SpinnerLoading from "../elements/Loading/spinnerLoading";
 import ProfileLoading from "../elements/Loading/profileLoading";
+import { FaCircleInfo } from "react-icons/fa6";
 
 const Profile = () => {
   const [userId, setUserId] = useState("");
@@ -229,8 +230,8 @@ const Profile = () => {
                   width={"full"}
                 />
               </div>
-              <div className="md:w-6/12">
-                <div className="">
+              <div className="md:w-8/12">
+                <div>
                   <div className="mb-2">
                     <p className="text-sm font-medium text-gray-900">Gender</p>
                   </div>
@@ -245,15 +246,26 @@ const Profile = () => {
                     value={selectedGender}
                   />
                 </div>
-                <button
-                  className={`mt-5 hidden md:flex gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
-                    isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
-                  }`}
-                  onClick={handleUpdate}
-                  disabled={isDisable}
-                >
-                  {isLoading && <SpinnerLoading withText={false} />} Update
-                </button>
+                <div className="hidden md:block w-full">
+                  <button
+                    className={`mt-5 hidden md:flex gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 ${
+                      isDisable
+                        ? "cursor-not-allowed bg-slate-400"
+                        : "bg-primary"
+                    }`}
+                    onClick={handleUpdate}
+                    disabled={isDisable}
+                  >
+                    {isLoading && <SpinnerLoading withText={false} />} Update
+                  </button>
+                  <div className="hidden md:flex gap-1 items-center mt-2">
+                    <FaCircleInfo className="text-gray-500" />
+                    <p className="text-xs text-gray-500">
+                      After updating, please log in again so that your data is
+                      updated!
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </>
@@ -326,15 +338,23 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <button
-        className={`mt-5 md:hidden gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 w-fit flex ${
-          isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
-        }`}
-        onClick={handleUpdate}
-        disabled={isDisable}
-      >
-        {isLoading && <SpinnerLoading withText={false} />} Update
-      </button>
+      <div className="md:hidden">
+        <button
+          className={`mt-5 md:hidden gap-2 text-white items-center  py-2 px-4 rounded-md transform transition-transform duration-300 w-fit flex ${
+            isDisable ? "cursor-not-allowed bg-slate-400" : "bg-primary"
+          }`}
+          onClick={handleUpdate}
+          disabled={isDisable}
+        >
+          {isLoading && <SpinnerLoading withText={false} />} Update
+        </button>
+        <div className="flex gap-1 items-center mt-2">
+          <FaCircleInfo className="text-gray-500" />
+          <p className="text-xs text-gray-500">
+            After updating, please log in again so that your data is updated!
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

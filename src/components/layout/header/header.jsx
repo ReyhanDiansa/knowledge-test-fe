@@ -7,7 +7,6 @@ import { deleteCookie } from "../../../utils/cookie";
 import { CiLogout } from "react-icons/ci";
 import Link from "next/link";
 
-
 const Header = ({ toggleSidebar, userData }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const router = useRouter();
@@ -22,12 +21,16 @@ const Header = ({ toggleSidebar, userData }) => {
   };
 
   return (
-    <header className="bg-gray-50 border-b-2 p-4 flex justify-between gap-16 text-center md:gap-0 items-center fixed z-20 w-full">
+    <header className="bg-gray-50 border-b-2 p-4 py-2 flex justify-between gap-16 text-center md:gap-0 items-center fixed z-20 w-full">
       <div className="flex gap-5 items-center">
         <button onClick={toggleSidebar} className="text-2xl text-primary">
           ☰
         </button>
-        <Link href={"/"} className="text-md md:text-xl font-semibold text-primary">
+        <Link
+          href={"/"}
+          className="text-md md:text-xl font-semibold text-primary flex items-center gap-1"
+        >
+          <Image src="/asset/logo/icon.svg" width={50} height={40} alt="logo" />
           KelolaProduk
         </Link>
       </div>
@@ -47,7 +50,9 @@ const Header = ({ toggleSidebar, userData }) => {
             <div className="absolute w-[10rem] top-12 text-black right-6 bg-white p-2 rounded-b-md rounded-tl-md border-2">
               <div className="py-3  border-b-2 border-black">
                 <h1 className="font-semibold text-sm">{userData.name}</h1>
-                <p className="text-gray-500 break-words text-xs"> {userData.email}
+                <p className="text-gray-500 break-words text-xs">
+                  {" "}
+                  {userData.email}
                 </p>
               </div>
               <div
