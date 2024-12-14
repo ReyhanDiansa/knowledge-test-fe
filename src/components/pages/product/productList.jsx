@@ -98,7 +98,7 @@ const productList = () => {
       <div>
         <ToastContainer />
         <div>
-          <div className="flex flex-col md:flex-row  justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between">
             <h1 className="text-2xl font-semibold text-primary">
               Product List
             </h1>

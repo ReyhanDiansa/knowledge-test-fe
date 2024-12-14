@@ -17,7 +17,7 @@ import Select from "react-select";
 
 const editProduct = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [getLoading, setGetLoading] = useState(false);
+  const [getLoading, setGetLoading] = useState(true);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -136,7 +136,7 @@ const editProduct = () => {
       <div>
         <Link
           href={"/product"}
-          className="flex gap-1 items-center my-1 hover:text-blue-500"
+          className="flex gap-1 items-center my-1 hover:text-blue-500 w-fit"
         >
           <FaArrowLeft />
           <p className="underline">Back To List</p>
@@ -215,12 +215,13 @@ const editProduct = () => {
                     onChange={handleFileChange}
                     withIcon={false}
                     width={"full"}
+                    required={false}
                   />
                 </div>
                 <div className="md:w-4/12">
                   <div className="mb-2">
                     <p className="text-sm font-medium text-gray-900">
-                      Category
+                      Category <span className="text-red-600">*</span>
                     </p>
                   </div>
                   <Select

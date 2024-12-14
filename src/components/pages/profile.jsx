@@ -132,8 +132,9 @@ const Profile = () => {
 
       if (registerResponse.data.success) {
         setIsLoading(false);
+        setPassword("");
+        setPasswordConfirmation("");
         showToast("success", "Success Update Profile");
-
         setTimeout(() => {
           findOne();
         }, 3000);
@@ -233,7 +234,9 @@ const Profile = () => {
               <div className="md:w-8/12">
                 <div>
                   <div className="mb-2">
-                    <p className="text-sm font-medium text-gray-900">Gender</p>
+                    <p className="text-sm font-medium text-gray-900">
+                      Gender <span className="text-red-600">*</span>
+                    </p>
                   </div>
                   <Select
                     className="basic-single"
@@ -287,7 +290,7 @@ const Profile = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 withBottommargin={false}
                 withIcon={false}
-                //   withLabel={false}
+                required={false}
               />
               {password && (
                 <div className="mt-1">
@@ -332,7 +335,7 @@ const Profile = () => {
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
                 withBottommargin={false}
                 withIcon={false}
-                //   withLabel={false}
+                required={false}
               />
             </div>
           </div>

@@ -107,7 +107,7 @@ const addProduct = () => {
       <div>
         <Link
           href={"/product"}
-          className="flex gap-1 items-center my-1 hover:text-blue-500"
+          className="flex gap-1 items-center my-1 hover:text-blue-500 w-fit"
         >
           <FaArrowLeft />
           <p className="underline">Back To List</p>
@@ -179,9 +179,9 @@ const addProduct = () => {
               width={"full"}
             />
           </div>
-          <div>
+          <div className="md:w-4/12">
             <div className="mb-2">
-              <p className="text-sm font-medium text-gray-900">Category</p>
+              <p className="text-sm font-medium text-gray-900">Category <span className="text-red-600">*</span></p>
             </div>
             <Select
               className="basic-single"

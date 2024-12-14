@@ -12,7 +12,8 @@ const PasswordInput = ({
   withBottommargin = true,
   withIcon = true,
   withLabel = true,
-  widthResponsive="64"
+  widthResponsive = "64",
+  required = true,
 }) => {
   // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,8 @@ const PasswordInput = ({
           htmlFor={id}
           className="block mb-2 text-sm font-medium text-gray-900"
         >
-          {label}
+          {label}{" "}
+          {required ? <span className="text-red-600">*</span> : "(Optional)"}
         </label>
       )}
       <div className={`relative ${withBottommargin && "mb-6"}`}>

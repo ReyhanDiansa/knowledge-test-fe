@@ -23,10 +23,10 @@ import {
 import { IoMdCloseCircle } from "react-icons/io";
 import { TbLockCheck } from "react-icons/tb";
 import showToast from "../../utils/toast";
-import Select from "../elements/Form/select";
+import Select from "react-select";
 import "react-toastify/dist/ReactToastify.css";
 import { withAuth } from "../../utils/authenticationMiddleware";
-
+import { customStyles } from "../../utils/selectStyle";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -38,9 +38,25 @@ const Register = () => {
   const [lengthRule, setLength] = useState(false);
   const [capitalRule, setCapital] = useState(false);
   const [isDisable, setIsDisable] = useState(true);
-  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedGender, setSelectedGender] = useState(null);
 
   const router = useRouter();
+
+  const genderSelectOption = [
+    {
+      value: "laki-laki",
+      label: "Laki-laki",
+    },
+    {
+      value: "perempuan",
+      label: "Perempuan",
+    },
+  ];
+
+  const handleChangeGender = (selectedOption) => {
+    setSelectedGender(selectedOption);
+  };
+
   const handleRegister = async () => {
     setIsLoading(true);
     const confirm = sameWithConfirm(password, passwordConfirmation);
@@ -63,7 +79,7 @@ const Register = () => {
         name,
         email,
         password,
-        gender:selectedGender
+        gender: selectedGender?.value,
       };
       try {
         const registerResponse = await api.post("/user/register", userData);
@@ -144,7 +160,7 @@ const Register = () => {
     <>
       <ToastContainer />
       <div className=" h-full  md:mx-0 flex justify-center items-center">
-        <div className="bg-white rounded-md flex  px-5 py-5 shadow-md md:w-8/12 md:h-[81.5%] divide-x  divide-gray-200">
+        <div className="bg-white rounded-md flex  px-5 py-5 shadow-md md:w-8/12 md:h-[85%] divide-x  divide-gray-200">
           <div className="md:w-6/12 my-auto">
             <div className="mx-auto">
               <p className="text-center text-2xl font-semibold text-primary">
@@ -178,14 +194,21 @@ const Register = () => {
                   withBottommargin={false}
                 />
               </div>
-              <div className="mt-3">
+              <div className="w-8/12 mt-1">
+                <div className="mb-2">
+                  <p className="text-sm font-medium text-gray-900">
+                    Gender <span className="text-red-600">*</span>
+                  </p>
+                </div>
                 <Select
-                  name="Jenis Kelamin"
-                  label="Pilih jenis kelamin"
-                  id="gender"
-                  options={genderOptions}
+                  className="basic-single"
+                  classNamePrefix="select"
+                  styles={customStyles}
+                  isSearchable={true}
+                  name="category"
+                  options={genderSelectOption}
+                  onChange={handleChangeGender}
                   value={selectedGender}
-                  onChange={handleSelectChange}
                 />
               </div>
               <div className="mt-3">

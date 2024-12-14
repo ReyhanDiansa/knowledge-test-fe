@@ -9,6 +9,7 @@ const textArea = ({
   value,
   onChange,
   withIcon = true,
+  required = true
 }) => {
   return (
     <div>
@@ -16,7 +17,8 @@ const textArea = ({
         htmlFor={id}
         className="block mb-2 text-sm font-medium text-gray-900"
       >
-        {label}
+        {label}{" "}
+        {required ? <span className="text-red-600">*</span> : "(Optional)"}{" "}
       </label>
       <div className="relative ">
         {withIcon && (
@@ -27,7 +29,9 @@ const textArea = ({
         <textarea
           id={id}
           name={name}
-          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ${withIcon && "ps-10"} p-2.5`}
+          className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ${
+            withIcon && "ps-10"
+          } p-2.5`}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
